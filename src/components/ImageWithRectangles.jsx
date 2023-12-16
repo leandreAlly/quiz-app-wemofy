@@ -2,6 +2,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Stage, Layer, Rect, Image, Transformer } from 'react-konva';
 import useImage from 'use-image';
+import ConfirmationPopup from './ConfirmationPopup';
 
 const ImageWithRectangles = ({ src, id, handleImageDelete, width }) => {
   const [img] = useImage(src);
@@ -12,10 +13,27 @@ const ImageWithRectangles = ({ src, id, handleImageDelete, width }) => {
   const [strokeColor, setStrokeColor] = useState('red');
   const [dragging, setDragging] = useState(false);
   const [resizing, setResizing] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  const handleOpenPopup = () => {
+    setIsPopupOpen(true);
+  };
+
+  const handleClosePopup = () => {
+    setIsPopupOpen(false);
+  };
+
+  const handleConfirmPopup = () => {
+    handleSubmit();
+    setIsPopupOpen(false);
+  };
+
   const stageRef = useRef();
   const trRef = useRef();
 
   const handleMouseDown = (event) => {
+    if (isSubmitted) return;
     if (!dragging && !resizing) {
       setStartPoint({ x: event.evt.layerX, y: event.evt.layerY });
       stageRef.current.container().style.cursor = 'crosshair';
@@ -47,17 +65,26 @@ const ImageWithRectangles = ({ src, id, handleImageDelete, width }) => {
     }
   };
 
-  const saveSelectedArea = (rect) => {
-    console.log(rect);
-  };
-
   const handleSelect = (id) => {
     selectShape(id);
     setResizing(false);
     setTimeout(() => {
       trRef.current.nodes([stageRef.current.findOne(`#${id}`)]);
-      trRef.current.getLayer().batchDraw();
+      trRef.current.getLayer().batchDraw(); //
     });
+  };
+
+  const handleSubmit = () => {
+    const answer = rectangles.find((rect) => rect.stroke === 'green');
+    const question = rectangles.find((rect) => rect.stroke === 'purple');
+    const wrongAnswers = rectangles.filter((rect) => rect.stroke === 'red');
+
+    if (answer) localStorage.setItem('answer', JSON.stringify(answer));
+    if (question) localStorage.setItem('question', JSON.stringify(question));
+    if (wrongAnswers.length > 0)
+      localStorage.setItem('wrongAnswers', JSON.stringify(wrongAnswers));
+
+    setIsSubmitted(true);
   };
 
   useEffect(() => {
@@ -70,9 +97,20 @@ const ImageWithRectangles = ({ src, id, handleImageDelete, width }) => {
   return (
     <div key={id}>
       <button onClick={() => handleImageDelete(id)}>Delete</button>
-      <button onClick={() => setStrokeColor('red')}>Red</button>
-      <button onClick={() => setStrokeColor('green')}>Green</button>
-      <button onClick={() => setStrokeColor('purple')}>Purple</button>
+      <button onClick={() => setStrokeColor('red')}>Add Red Reactangle</button>
+      <button onClick={() => setStrokeColor('green')}>
+        Add Green Reactangle
+      </button>
+      <button onClick={() => setStrokeColor('purple')}>
+        {' '}
+        Add Purple Reactangle
+      </button>
+      <button onClick={handleOpenPopup}>Submit</button>
+      <ConfirmationPopup
+        isOpen={isPopupOpen}
+        onCancel={handleClosePopup}
+        onConfirm={handleConfirmPopup}
+      />
       <Stage
         width={width}
         height={imageHeight}

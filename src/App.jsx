@@ -4,7 +4,8 @@ import UploadImage from './components/UploadImage';
 function App() {
   return (
     <>
-      <div>Wemofy Tasks</div>
+      <h1>Wemofy task</h1>
+      <br />
       <UploadImage />
     </>
   );

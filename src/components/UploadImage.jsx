@@ -29,6 +29,9 @@ const UploadImage = () => {
   return (
     <div>
       <input type="file" onChange={handleImageUpload} multiple />
+      <br />
+      <br />
+
       {selectedImages.map((image) => (
         <ImageWithRectangles
           key={image.id}
