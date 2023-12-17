@@ -1,12 +1,14 @@
 // UploadImage.jsx
 import React, { useState } from 'react';
+import Dropzone from 'react-dropzone';
+import { UploadIcon } from '../assets';
 import ImageWithRectangles from './ImageWithRectangles';
 
 const UploadImage = () => {
   const [selectedImages, setSelectedImages] = useState([]);
 
-  const handleImageUpload = (event) => {
-    Array.from(event.target.files).forEach((file) => {
+  const onDrop = (acceptedFiles) => {
+    acceptedFiles.forEach((file) => {
       const reader = new FileReader();
 
       reader.onloadend = () => {
@@ -28,20 +30,38 @@ const UploadImage = () => {
 
   return (
     <div>
-      <input type="file" onChange={handleImageUpload} multiple />
+      <Dropzone onDrop={onDrop}>
+        {({ getRootProps, getInputProps }) => (
+          <section>
+            <div {...getRootProps()}>
+              <input {...getInputProps()} />
+              <p>Drag 'n' drop some files here, or click to select files</p>
+              <button type="button">
+                <img
+                  src={UploadIcon}
+                  alt="Upload Icon"
+                  width={70}
+                  height={70}
+                />
+              </button>
+            </div>
+          </section>
+        )}
+      </Dropzone>
       <br />
-      <br />
-
-      {selectedImages.map((image) => (
-        <ImageWithRectangles
-          key={image.id}
-          src={image.src}
-          id={image.id}
-          handleImageDelete={handleImageDelete}
-          width={500}
-          height={500}
-        />
-      ))}
+      <div>
+        {selectedImages.map((image) => (
+          <div key={image.id} style={{ marginBottom: '15px' }}>
+            <ImageWithRectangles
+              src={image.src}
+              id={image.id}
+              handleImageDelete={handleImageDelete}
+              width={500}
+              height={500}
+            />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
