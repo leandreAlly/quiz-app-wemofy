@@ -5,7 +5,7 @@ function App() {
   return (
     <>
       <h1>Wemofy task</h1>
-      <br />
+
       <UploadImage />
     </>
   );
