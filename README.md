@@ -2,6 +2,14 @@
 
 This is a React front-end application for a quiz app based on image processing. In this app, users can draw colored rectangles around images to select their answers for the quiz, including both correct and incorrect options.
 
+### Screenshoot of app
+<img width="1007" alt="Screenshot 2023-12-17 at 10 59 00 AM" src="https://github.com/leandreAlly/quiz-app-wemofy/assets/78492995/78b993a0-861b-47db-849f-0cacf4717473">
+
+<img width="791" alt="Screenshot 2023-12-17 at 10 59 12 AM" src="https://github.com/leandreAlly/quiz-app-wemofy/assets/78492995/a9b3b0bc-bf1b-41c0-9d97-4263ddcef0ba">
+
+<img width="486" alt="Screenshot 2023-12-17 at 10 59 51 AM" src="https://github.com/leandreAlly/quiz-app-wemofy/assets/78492995/0f5a4c2f-65d1-453a-9fad-cd142f323971">
+
+
 ## Tech stack
 
 [![Stack Used](https://skillicons.dev/icons?i=react,vite&theme=dark)](https://skillicons.dev)
