@@ -32,7 +32,7 @@ This is a React front-end application for a quiz app based on image processing. 
 > clone the project, by running the commands below in your terminal.
 
 ```ps
-git clone https://github.com/leandreAlly/login-api.git
+git clone https://github.com/leandreAlly/quiz-app-wemofy.git
 ```
 
 ```ps
@@ -57,4 +57,4 @@ yarn run dev
 
 ## Deployment
 
-- [Quiz app](https://login-flow-api.onrender.com/api-docs/#/)
+- [Quiz app](https://github.com/leandreAlly/quiz-app-wemofy.git)
