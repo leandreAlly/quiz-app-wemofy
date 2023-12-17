@@ -1,8 +1,8 @@
 // UploadImage.jsx
 import React, { useState } from 'react';
-import Dropzone, { useDropzone } from 'react-dropzone';
-import ImageWithRectangles from './ImageWithRectangles';
+import Dropzone from 'react-dropzone';
 import { UploadIcon } from '../assets';
+import ImageWithRectangles from './ImageWithRectangles';
 
 const UploadImage = () => {
   const [selectedImages, setSelectedImages] = useState([]);
@@ -48,16 +48,18 @@ const UploadImage = () => {
           </section>
         )}
       </Dropzone>
+      <br />
       <div>
         {selectedImages.map((image) => (
-          <ImageWithRectangles
-            key={image.id}
-            src={image.src}
-            id={image.id}
-            handleImageDelete={handleImageDelete}
-            width={500}
-            height={500}
-          />
+          <div key={image.id} style={{ marginBottom: '15px' }}>
+            <ImageWithRectangles
+              src={image.src}
+              id={image.id}
+              handleImageDelete={handleImageDelete}
+              width={500}
+              height={500}
+            />
+          </div>
         ))}
       </div>
     </div>

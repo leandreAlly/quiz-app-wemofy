@@ -1,3 +1,3 @@
-import UploadIcon from './cloud-computing.png';
+import UploadIcon from './photo.png';
 
 export { UploadIcon };

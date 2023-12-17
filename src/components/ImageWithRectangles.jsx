@@ -96,16 +96,20 @@ const ImageWithRectangles = ({ src, id, handleImageDelete, width }) => {
 
   return (
     <div key={id}>
-      <button onClick={() => handleImageDelete(id)}>Delete</button>
-      <button onClick={() => setStrokeColor('red')}>Add Red Reactangle</button>
-      <button onClick={() => setStrokeColor('green')}>
-        Add Green Reactangle
-      </button>
-      <button onClick={() => setStrokeColor('purple')}>
-        {' '}
-        Add Purple Reactangle
-      </button>
-      <button onClick={handleOpenPopup}>Submit</button>
+      <div style={{ marginBottom: '10px' }}>
+        <button onClick={() => handleImageDelete(id)}>Delete</button>
+        <button onClick={() => setStrokeColor('red')}>
+          Add Red Reactangle
+        </button>
+        <button onClick={() => setStrokeColor('green')}>
+          Add Green Reactangle
+        </button>
+        <button onClick={() => setStrokeColor('purple')}>
+          {' '}
+          Add Purple Reactangle
+        </button>
+        <button onClick={handleOpenPopup}>Submit</button>
+      </div>
       <ConfirmationPopup
         isOpen={isPopupOpen}
         onCancel={handleClosePopup}
