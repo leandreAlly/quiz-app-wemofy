@@ -5,7 +5,6 @@ import useImage from 'use-image';
 import ConfirmationPopup from './ConfirmationPopup';
 
 const ImageWithRectangles = ({ src, id, handleImageDelete, width }) => {
-  const [img] = useImage(src);
   const [imageHeight, setImageHeight] = useState(0);
   const [rectangles, setRectangles] = useState([]);
   const [selectedId, selectShape] = useState(null);
@@ -15,6 +14,7 @@ const ImageWithRectangles = ({ src, id, handleImageDelete, width }) => {
   const [resizing, setResizing] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [img] = useImage(src);
 
   const handleOpenPopup = () => {
     setIsPopupOpen(true);
