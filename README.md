@@ -57,4 +57,4 @@ yarn run dev
 
 ## Deployment
 
-- [Quiz app](https://github.com/leandreAlly/quiz-app-wemofy.git)
+- [Quiz app](https://quiz-app-wemofy-leandreally.vercel.app/)
