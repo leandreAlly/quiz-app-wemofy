@@ -1,4 +1,3 @@
-// ImageWithRectangles.jsx
 import React, { useState, useRef, useEffect } from 'react';
 import { Stage, Layer, Rect, Image, Transformer } from 'react-konva';
 import useImage from 'use-image';

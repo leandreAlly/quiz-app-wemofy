@@ -1,4 +1,3 @@
-// ConfirmationPopup.jsx
 import React from 'react';
 
 const ConfirmationPopup = ({ isOpen, onCancel, onConfirm }) => {

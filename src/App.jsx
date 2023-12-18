@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import UploadImage from './components/UploadImage';
+import UploadAnswers from './components/UploadAnswers.jsx';
+import UploadImage from './components/UploadImage.jsx';
 
 function App() {
   return (
-    <>
-      <h1>Wemofy task</h1>
-
+    <div>
+      <h1>Wemofy Task</h1>
       <UploadImage />
-    </>
+      <UploadAnswers />
+    </div>
   );
 }
 

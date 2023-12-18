@@ -1,4 +1,3 @@
-// UploadImage.jsx
 import React, { useState } from 'react';
 import Dropzone from 'react-dropzone';
 import { UploadIcon } from '../assets';
