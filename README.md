@@ -23,12 +23,11 @@ This is a React front-end application for a quiz app based on image processing. 
 4. **Resize Rectangles**: Users can also resize the rectangles to fit into the specific areas they want to select in the image.✅
 5. **Delete Images**: You can delete the selected image in case you make a mistake while choosing an image from the local machine.✅
 6. **Submit quiz and save data into LocalStorage**: afAfter the user verifies that all rectangles are well-organized, they can submit, and the data will be saved in the local storage..✅
+7. **Upload answers**: Upload answers and drag them as well as drop them into the sentence to fill it✅
 
 ## In Progress:
 
 - Marking the submitted answer
-- Show the user the correct answer
-- Show the user what they missed
 
 ## INSTALLATION
 
