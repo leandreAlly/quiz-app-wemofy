@@ -5,7 +5,8 @@ This is a React front-end application for a quiz app based on image processing. 
 ### Screenshoot of app
 <img width="1007" alt="Screenshot 2023-12-17 at 10 59 00 AM" src="https://github.com/leandreAlly/quiz-app-wemofy/assets/78492995/78b993a0-861b-47db-849f-0cacf4717473">
 
-<img width="791" alt="Screenshot 2023-12-17 at 10 59 12 AM" src="https://github.com/leandreAlly/quiz-app-wemofy/assets/78492995/a9b3b0bc-bf1b-41c0-9d97-4263ddcef0ba">
+<img width="1186" alt="Screenshot 2023-12-18 at 12 57 42 PM" src="https://github.com/leandreAlly/quiz-app-wemofy/assets/78492995/17d77c13-e1f0-4917-8dcb-6040440ba711">
+
 
 <img width="486" alt="Screenshot 2023-12-17 at 10 59 51 AM" src="https://github.com/leandreAlly/quiz-app-wemofy/assets/78492995/0f5a4c2f-65d1-453a-9fad-cd142f323971">
 
